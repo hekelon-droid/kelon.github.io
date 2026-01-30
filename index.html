@@ -8,13 +8,35 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* 更“高级”的细节：微弱纹理、柔和阴影、字体 */
-    :root{ --bg:#0b0c0f; --card:#11131a; --muted:#9aa3b2; --line:rgba(255,255,255,.08); }
-    body{ background: radial-gradient(1200px 600px at 20% 10%, rgba(255,255,255,.06), transparent 55%),
-                  radial-gradient(900px 500px at 80% 0%, rgba(255,255,255,.05), transparent 60%),
-                  var(--bg); color: #eef2ff; }
-    .glass{ background: rgba(17,19,26,.78); border: 1px solid var(--line); backdrop-filter: blur(10px); }
-    .hairline{ border-color: var(--line); }
-    .muted{ color: var(--muted); }
+    :root{
+  --bg:#f6f3ee;            /* 奶白底 */
+  --card:rgba(255,255,255,.72);
+  --muted:#5b6270;         /* 灰蓝文字 */
+  --line:rgba(15,23,42,.10); /* 深色细线 */
+  --text:#0f172a;          /* 主文字深色 */
+}
+
+body{
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(15,23,42,.06), transparent 55%),
+    radial-gradient(900px 500px at 80% 0%, rgba(15,23,42,.04), transparent 60%),
+    var(--bg);
+  color: var(--text);
+}
+
+.glass{
+  background: var(--card);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+
+.hairline{ border-color: var(--line); }
+.muted{ color: var(--muted); }
+.tag{ border: 1px solid rgba(15,23,42,.12); }
+.btn{ border: 1px solid rgba(15,23,42,.14); }
+.btn:hover{ border-color: rgba(15,23,42,.24); }
+.shadow-soft{ box-shadow: 0 10px 30px rgba(15,23,42,.10); }
+
     .btn{ border: 1px solid rgba(255,255,255,.14); }
     .btn:hover{ border-color: rgba(255,255,255,.28); }
     .tag{ border: 1px solid rgba(255,255,255,.12); }
