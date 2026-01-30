@@ -77,6 +77,12 @@ body{
   </header>
 
   <!-- Hero -->
+  <img 
+  src="images/hero.jpg"
+  alt="BOXMAN 收纳展示"
+  class="mt-4 w-full h-64 object-cover rounded-2xl"
+/>
+
   <section class="mx-auto max-w-6xl px-4 pt-10 pb-6">
     <div class="grid md:grid-cols-2 gap-6 items-stretch">
       <div class="glass rounded-3xl p-7 shadow-soft">
@@ -679,6 +685,11 @@ body{
         const card = document.createElement("div");
         card.className = "glass rounded-3xl p-6 shadow-soft flex flex-col";
         card.innerHTML = `
+        <img 
+    src="images/${p.key}.jpg"
+    alt="${name}"
+    class="w-full h-40 object-cover rounded-2xl mb-3"
+  />
           <div class="text-xs muted">${(lang==="zh") ? "默认显示包邮价" : "Default: free-shipping price"}</div>
           <div class="mt-2 text-lg font-semibold">${name}</div>
           <p class="mt-2 text-sm muted leading-relaxed">${desc}</p>
