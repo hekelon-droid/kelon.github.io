@@ -4,744 +4,150 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HomeAndHeritage | 极简·高质感·中性风收纳</title>
-  <meta name="description" content="极简高质感中性风收纳品牌。桌面与家居收纳：Trunks宝藏箱、Mini Box、Tissue Box、Suitcase / Book Box。加拿大本地邮寄为主，支持自取。" />
+  <meta name="description" content="HomeAndHeritage 极简高质感中性风家居与桌面收纳。主推 Trunks 宝藏箱、Tissue Box 纸巾盒、Table Clock 桌面钟。" />
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-    /* 更“高级”的细节：微弱纹理、柔和阴影、字体 */
     :root{
-  --bg:#f6f3ee;            /* 奶白底 */
-  --card:rgba(255,255,255,.72);
-  --muted:#5b6270;         /* 灰蓝文字 */
-  --line:rgba(15,23,42,.10); /* 深色细线 */
-  --text:#0f172a;          /* 主文字深色 */
-}
-
-body{
-  background:
-    radial-gradient(1200px 600px at 20% 10%, rgba(15,23,42,.06), transparent 55%),
-    radial-gradient(900px 500px at 80% 0%, rgba(15,23,42,.04), transparent 60%),
-    var(--bg);
-  color: var(--text);
-}
-
-.glass{
-  background: var(--card);
-  border: 1px solid var(--line);
-  backdrop-filter: blur(10px);
-}
-
-.hairline{ border-color: var(--line); }
-.muted{ color: var(--muted); }
-.tag{ border: 1px solid rgba(15,23,42,.12); }
-.btn{ border: 1px solid rgba(15,23,42,.14); }
-.btn:hover{ border-color: rgba(15,23,42,.24); }
-.shadow-soft{ box-shadow: 0 10px 30px rgba(15,23,42,.10); }
-
-    .btn{ border: 1px solid rgba(255,255,255,.14); }
-    .btn:hover{ border-color: rgba(255,255,255,.28); }
-    .tag{ border: 1px solid rgba(255,255,255,.12); }
-    .shadow-soft{ box-shadow: 0 10px 30px rgba(0,0,0,.35); }
-    .mono{ font-feature-settings: "ss01" 1, "ss02" 1; }
+      --bg:#f6f3ee;
+      --card:rgba(255,255,255,.78);
+      --text:#0f172a;
+      --muted:#5b6270;
+      --line:rgba(15,23,42,.12);
+    }
+    body{
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(15,23,42,.06), transparent 55%),
+        radial-gradient(900px 500px at 80% 0%, rgba(15,23,42,.04), transparent 60%),
+        var(--bg);
+      color:var(--text);
+    }
+    .glass{
+      background:var(--card);
+      border:1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .muted{ color:var(--muted); }
+    .shadow-soft{ box-shadow:0 10px 28px rgba(15,23,42,.10); }
   </style>
 </head>
 
 <body class="antialiased">
-  <!-- Top Bar -->
-  <header class="sticky top-0 z-50 border-b hairline">
-    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="h-9 w-9 rounded-xl glass shadow-soft flex items-center justify-center font-semibold">B</div>
-        <div class="leading-tight">
-          <div class="font-semibold tracking-wide">HomeAndHeritage</div>
-          <div class="text-xs muted" data-i18n="brandSub">极简 · 高质感 · 中性风收纳</div>
-        </div>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--bg)]/80 backdrop-blur">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="h-9 w-9 rounded-xl glass shadow-soft flex items-center justify-center font-semibold text-sm">
+        H&H
       </div>
-
-      <nav class="hidden md:flex items-center gap-6 text-sm muted">
-        <a href="#collections" class="hover:text-white" data-i18n="navCollections">系列</a>
-        <a href="#featured" class="hover:text-white" data-i18n="navFeatured">主推</a>
-        <a href="#shipping" class="hover:text-white" data-i18n="navShipping">配送/自取</a>
-        <a href="#policy" class="hover:text-white" data-i18n="navPolicy">政策</a>
-        <a href="#contact" class="hover:text-white" data-i18n="navContact">联系/下单</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <button id="langBtn" class="btn rounded-xl px-3 py-2 text-sm glass">
-          <span class="mono">中文 / EN</span>
-        </button>
-        <a href="#contact" class="btn rounded-xl px-3 py-2 text-sm glass">
-          <span data-i18n="ctaTop">立即下单</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <img 
-  src="images/hero.jpg"
-  alt="H&H 收纳展示"
-  class="mt-4 w-full h-64 object-cover rounded-2xl"
-/>
-
-  <section class="mx-auto max-w-6xl px-4 pt-10 pb-6">
-    <div class="grid md:grid-cols-2 gap-6 items-stretch">
-      <div class="glass rounded-3xl p-7 shadow-soft">
-        <div class="flex flex-wrap gap-2 mb-5">
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="tagMinimal">纯色极简</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="tagNeutral">中性审美</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="tagQuality">高质感材料</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="tagPractical">高实用性</span>
-        </div>
-
-        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
-          <span data-i18n="heroTitle1">把生活的杂乱</span>
-          <span class="text-white/80" data-i18n="heroTitle2">收进一个高级感里</span>
-        </h1>
-
-        <p class="mt-4 muted leading-relaxed" data-i18n="heroDesc">
-          为男女各年龄层、家庭用户、学生与白领提供桌面与家居收纳解决方案。木纹、亚克力、仿古金属等高级材质，适配任何房间风格。
-        </p>
-
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="#featured" class="btn rounded-2xl px-5 py-3 glass text-center">
-            <span data-i18n="heroBtn1">查看热卖主推</span>
-          </a>
-          <a href="#shipping" class="rounded-2xl px-5 py-3 bg-white text-black text-center font-medium hover:opacity-90">
-            <span data-i18n="heroBtn2">包邮 / 自取怎么选</span>
-          </a>
-        </div>
-
-        <div class="mt-6 grid grid-cols-3 gap-3 text-center">
-          <div class="glass rounded-2xl p-3">
-            <div class="text-lg font-semibold">4</div>
-            <div class="text-xs muted" data-i18n="stat1">系列分类</div>
-          </div>
-          <div class="glass rounded-2xl p-3">
-            <div class="text-lg font-semibold" data-i18n="stat2Top">礼物级</div>
-            <div class="text-xs muted" data-i18n="stat2">质感包装</div>
-          </div>
-          <div class="glass rounded-2xl p-3">
-            <div class="text-lg font-semibold" data-i18n="stat3Top">CA</div>
-            <div class="text-xs muted" data-i18n="stat3">加拿大本地</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hero Visual -->
-      <div class="glass rounded-3xl p-7 shadow-soft flex flex-col justify-between">
-        <div>
-          <div class="text-sm muted" data-i18n="heroRightTitle">本周主打</div>
-          <div class="mt-2 text-2xl font-semibold" data-i18n="heroRightName">Trunks · 3件套宝藏箱</div>
-          <p class="mt-3 muted leading-relaxed" data-i18n="heroRightDesc">
-            复古欧式 / 仿古金属扣 / 书卷纹质感。适合装饰、摄影道具、纪念品与首饰收纳。礼物场景强，利润稳定。
-          </p>
-        </div>
-      <img 
-  src="images/trunks.jpg"
-  alt="Trunks 宝藏箱"
-  class="w-full h-64 object-cover rounded-2xl shadow-soft"
-/>
-        
-        <div class="mt-6 grid grid-cols-2 gap-3">
-          <div class="glass rounded-2xl p-4">
-            <div class="text-xs muted" data-i18n="badge1">默认</div>
-            <div class="mt-1 font-semibold" data-i18n="badge1b">邮寄 · 包邮价</div>
-            <div class="mt-1 text-xs muted" data-i18n="badge1c">适合全加拿大范围</div>
-          </div>
-          <div class="glass rounded-2xl p-4">
-            <div class="text-xs muted" data-i18n="badge2">本地福利</div>
-            <div class="mt-1 font-semibold" data-i18n="badge2b">自取 · 立减</div>
-            <div class="mt-1 text-xs muted" data-i18n="badge2c">不想付运费就自取</div>
-          </div>
-        </div>
-
-        <a href="#contact" class="mt-6 rounded-2xl px-5 py-3 bg-white text-black text-center font-medium hover:opacity-90">
-          <span data-i18n="heroRightBtn">咨询库存 / 直接下单</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Collections -->
-  <section id="collections" class="mx-auto max-w-6xl px-4 py-10">
-    <div class="flex items-end justify-between gap-4">
       <div>
-        <h2 class="text-2xl font-semibold" data-i18n="colTitle">系列分类</h2>
-        <p class="mt-2 muted" data-i18n="colDesc">每个系列都兼顾实用与审美，适配桌面与家居场景。</p>
-      </div>
-      <a href="#contact" class="text-sm muted hover:text-white" data-i18n="colLink">想看实拍？联系我 →</a>
-    </div>
-
-    <div class="mt-6 grid md:grid-cols-2 gap-4">
-      <!-- Card 1 -->
-      <div class="glass rounded-3xl p-6 shadow-soft">
-        <div class="text-sm muted" data-i18n="c1Tag">礼物 / 复古 / 收藏</div>
-        <div class="mt-2 text-xl font-semibold" data-i18n="c1Title">Trunks · 宝藏箱</div>
-        <p class="mt-2 muted leading-relaxed" data-i18n="c1Desc">
-          大中小三尺寸，适合照片、信件、纪念品、首饰。复古金属扣与仿古皮革质感，男女皆宜。
-        </p>
-        <div class="mt-4 flex flex-wrap gap-2">
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c1p1">摄影道具</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c1p2">礼物场景强</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c1p3">利润稳定</span>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="glass rounded-3xl p-6 shadow-soft">
-        <div class="text-sm muted" data-i18n="c2Tag">走量 / 桌面美学 / 复购</div>
-        <div class="mt-2 text-xl font-semibold" data-i18n="c2Title">Mini Box · 小物收纳</div>
-        <p class="mt-2 muted leading-relaxed" data-i18n="c2Desc">
-          戒指、耳钉、U盘、硬币、印章等“小到会丢的东西”，随处可放。最适合捆绑销售与赠品策略。
-        </p>
-        <div class="mt-4 flex flex-wrap gap-2">
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c2p1">冲动购买</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c2p2">买2包邮</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c2p3">复购强</span>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="glass rounded-3xl p-6 shadow-soft">
-        <div class="text-sm muted" data-i18n="c3Tag">家庭 / 办公 / 常青款</div>
-        <div class="mt-2 text-xl font-semibold" data-i18n="c3Title">Tissue Box · 纸巾盒</div>
-        <p class="mt-2 muted leading-relaxed" data-i18n="c3Desc">
-          人人用得到，更有装饰性（木纹 / PU皮 / 金属风格）。客厅、卧室、浴室、办公室都适配。
-        </p>
-        <div class="mt-4 flex flex-wrap gap-2">
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c3p1">生活提升</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c3p2">稳定好卖</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c3p3">可做套装</span>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="glass rounded-3xl p-6 shadow-soft">
-        <div class="text-sm muted" data-i18n="c4Tag">拍照爆款 / 装饰 + 实用</div>
-        <div class="mt-2 text-xl font-semibold" data-i18n="c4Title">Suitcase / Book Box · 摆件收纳</div>
-        <p class="mt-2 muted leading-relaxed" data-i18n="c4Desc">
-          房间布置、桌面装饰强，能拍照也能收纳。适合文件、手账本、小设备与收藏小物。
-        </p>
-        <div class="mt-4 flex flex-wrap gap-2">
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c4p1">小红书友好</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c4p2">中性风</span>
-          <span class="tag rounded-full px-3 py-1 text-xs muted" data-i18n="c4p3">礼物选择</span>
-        </div>
+        <div class="font-semibold">HomeAndHeritage</div>
+        <div class="text-xs muted">极简 · 高质感 · 中性风收纳</div>
       </div>
     </div>
-  </section>
-
-  <!-- Featured / Pricing -->
-  <section id="featured" class="mx-auto max-w-6xl px-4 py-10">
-    <div class="glass rounded-3xl p-7 shadow-soft">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-        <div>
-          <h2 class="text-2xl font-semibold" data-i18n="featTitle">主推热卖（可直接下单）</h2>
-          <p class="mt-2 muted" data-i18n="featDesc">
-            默认显示“包邮价”。本地自取可立减（不把邮费写出来，让它像福利）。
-          </p>
-        </div>
-        <div class="text-sm muted" data-i18n="featNote">价格为示例占位：你把数字改成你的最终定价即可。</div>
-      </div>
-
-      <div class="mt-6 grid md:grid-cols-3 gap-4" id="productGrid"></div>
-
-      <div class="mt-6 grid md:grid-cols-3 gap-4">
-        <div class="glass rounded-2xl p-5">
-          <div class="text-sm muted" data-i18n="deal1t">套装策略</div>
-          <div class="mt-1 font-semibold" data-i18n="deal1b">买2自动包邮</div>
-          <div class="mt-2 text-sm muted" data-i18n="deal1c">让邮费“消失”，提高转化率。</div>
-        </div>
-        <div class="glass rounded-2xl p-5">
-          <div class="text-sm muted" data-i18n="deal2t">赠品策略</div>
-          <div class="mt-1 font-semibold" data-i18n="deal2b">满额送小礼</div>
-          <div class="mt-2 text-sm muted" data-i18n="deal2c">贴纸 + 感谢卡 + 小赠品，提升复购。</div>
-        </div>
-        <div class="glass rounded-2xl p-5">
-          <div class="text-sm muted" data-i18n="deal3t">双价呈现</div>
-          <div class="mt-1 font-semibold" data-i18n="deal3b">包邮价 / 自取立减</div>
-          <div class="mt-2 text-sm muted" data-i18n="deal3c">自取是福利，不是“你在收邮费”。</div>
-        </div>
-      </div>
+    <div class="flex gap-3 text-sm">
+      <a href="#featured" class="hover:underline">主推</a>
+      <a href="#order" class="hover:underline">下单</a>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- Shipping -->
-  <section id="shipping" class="mx-auto max-w-6xl px-4 py-10">
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="glass rounded-3xl p-7 shadow-soft">
-        <h2 class="text-2xl font-semibold" data-i18n="shipTitle">配送与自取</h2>
-        <p class="mt-2 muted leading-relaxed" data-i18n="shipDesc">
-          主打线上邮寄（默认包邮价），少量线下自取（自取立减）。买家愿意付邮寄费时，就让“包邮”成为理由；不愿意时，用自取立减或买多包邮策略解决。
-        </p>
+<!-- Hero -->
+<section class="max-w-6xl mx-auto px-4 py-16">
+  <div class="glass rounded-3xl p-8 shadow-soft">
+    <h1 class="text-3xl md:text-4xl font-semibold mb-4">
+      把生活的杂乱，收进一个高级感里
+    </h1>
+    <p class="muted max-w-2xl">
+      HomeAndHeritage 提供适用于家庭、学生与白领的桌面与家居收纳解决方案。
+      复古与极简融合，实用与美感并存。
+    </p>
+  </div>
+</section>
 
-        <div class="mt-5 space-y-3 text-sm">
-          <div class="glass rounded-2xl p-4">
-            <div class="font-semibold" data-i18n="ship1t">默认：包邮价</div>
-            <div class="muted mt-1" data-i18n="ship1c">覆盖大多数地区；结账更干净，减少放弃下单。</div>
-          </div>
-          <div class="glass rounded-2xl p-4">
-            <div class="font-semibold" data-i18n="ship2t">本地：自取立减</div>
-            <div class="muted mt-1" data-i18n="ship2c">同城可约时间地点；现金或当场 e-transfer。</div>
-          </div>
-          <div class="glass rounded-2xl p-4">
-            <div class="font-semibold" data-i18n="ship3t">可选：Tracking</div>
-            <div class="muted mt-1" data-i18n="ship3c">需要追踪号可加价升级，降低丢包纠纷。</div>
-          </div>
-        </div>
-      </div>
+<!-- Featured -->
+<section id="featured" class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="text-2xl font-semibold mb-8">本周主推 · Featured</h2>
 
-      <div class="glass rounded-3xl p-7 shadow-soft">
-        <h3 class="text-xl font-semibold" data-i18n="packTitle">包装（让你能卖贵的原因）</h3>
-        <p class="mt-2 muted leading-relaxed" data-i18n="packDesc">
-          Zip bag + bubble mailer + 感谢卡 + DIY贴纸。看起来“很用心”，满意度更高，退货更低，复购更强。
-        </p>
+  <div class="grid md:grid-cols-3 gap-6">
 
-        <div class="mt-5 grid grid-cols-2 gap-3 text-sm">
-          <div class="glass rounded-2xl p-4">
-            <div class="font-semibold" data-i18n="pack1t">感谢语</div>
-            <div class="muted mt-1" data-i18n="pack1c">提升品牌温度与复购。</div>
-          </div>
-          <div class="glass rounded-2xl p-4">
-            <div class="font-semibold" data-i18n="pack2t">贴纸</div>
-            <div class="muted mt-1" data-i18n="pack2c">让用户愿意拍照发社媒。</div>
-          </div>
-          <div class="glass rounded-2xl p-4">
-            <div class="font-semibold" data-i18n="pack3t">防护</div>
-            <div class="muted mt-1" data-i18n="pack3c">减少破损与纠纷。</div>
-          </div>
-          <div class="glass rounded-2xl p-4">
-            <div class="font-semibold" data-i18n="pack4t">开箱体验</div>
-            <div class="muted mt-1" data-i18n="pack4c">让“亲民价”也像精品。</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Policy -->
-  <section id="policy" class="mx-auto max-w-6xl px-4 py-10">
-    <div class="glass rounded-3xl p-7 shadow-soft">
-      <h2 class="text-2xl font-semibold" data-i18n="polTitle">退换 / 风险说明</h2>
-      <p class="mt-2 muted" data-i18n="polDesc">
-        你目前的规则很清晰：非质量问题不退换；丢包不负责。这里我帮你把话术写得更“品牌化”，不显得生硬。
+    <!-- Trunks -->
+    <div class="glass rounded-3xl p-5 shadow-soft">
+      <img src="images/trunks.jpg" alt="Trunks 宝藏箱"
+        class="w-full h-56 object-cover rounded-2xl mb-4" />
+      <h3 class="text-lg font-semibold">Trunks · 宝藏箱</h3>
+      <p class="text-sm muted mt-2">
+        复古木纹与金属扣设计，适合收纳纪念品、首饰、信件，也非常适合作为礼物。
       </p>
-
-      <div class="mt-6 grid md:grid-cols-3 gap-4 text-sm">
-        <div class="glass rounded-2xl p-5">
-          <div class="font-semibold" data-i18n="pol1t">退换政策</div>
-          <div class="mt-2 muted leading-relaxed" data-i18n="pol1c">
-            非质量问题不退换（如个人喜好、尺寸不合适）。如到货破损或明显瑕疵，请在24小时内提供开箱视频/照片，我们将协助处理。
-          </div>
-        </div>
-        <div class="glass rounded-2xl p-5">
-          <div class="font-semibold" data-i18n="pol2t">运输风险</div>
-          <div class="mt-2 muted leading-relaxed" data-i18n="pol2c">
-            普通邮寄存在丢包风险。需要更高保障可选择 Tracking 服务（可加价升级），以降低纠纷与不确定性。
-          </div>
-        </div>
-        <div class="glass rounded-2xl p-5">
-          <div class="font-semibold" data-i18n="pol3t">线下交易</div>
-          <div class="mt-2 muted leading-relaxed" data-i18n="pol3c">
-            线下仅支持现金或当场 e-transfer 完成后交付，避免赖账与争议。
-          </div>
-        </div>
-      </div>
+      <p class="text-sm muted mt-3">
+        默认包邮价 · 本地自取立减
+      </p>
     </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="mx-auto max-w-6xl px-4 py-10">
-    <div class="glass rounded-3xl p-7 shadow-soft">
-      <h2 class="text-2xl font-semibold" data-i18n="faqTitle">常见问题</h2>
-      <div class="mt-6 grid md:grid-cols-2 gap-4 text-sm">
-        <div class="glass rounded-2xl p-5">
-          <div class="font-semibold" data-i18n="q1">Q：为什么默认是包邮价？</div>
-          <div class="mt-2 muted" data-i18n="a1">A：结账更简单、少一步犹豫。你也可以选择本地自取立减。</div>
-        </div>
-        <div class="glass rounded-2xl p-5">
-          <div class="font-semibold" data-i18n="q2">Q：可以看更多实拍/视频吗？</div>
-          <div class="mt-2 muted" data-i18n="a2">A：可以，发消息告诉我你想看的系列，我会发细节图和环绕预览视频。</div>
-        </div>
-        <div class="glass rounded-2xl p-5">
-          <div class="font-semibold" data-i18n="q3">Q：有哪些适合送礼的？</div>
-          <div class="mt-2 muted" data-i18n="a3">A：Trunks / Suitcase / Book Box 最适合，质感强、拍照好看、用途广。</div>
-        </div>
-        <div class="glass rounded-2xl p-5">
-          <div class="font-semibold" data-i18n="q4">Q：Mini Box 为什么适合捆绑？</div>
-          <div class="mt-2 muted" data-i18n="a4">A：使用频率高、客单低、冲动购买强；搭配大件做赠品能显得很划算。</div>
-        </div>
-      </div>
+    <!-- Tissue Box -->
+    <div class="glass rounded-3xl p-5 shadow-soft">
+      <img src="images/tissue-box.jpg" alt="Tissue Box 纸巾盒"
+        class="w-full h-56 object-cover rounded-2xl mb-4" />
+      <h3 class="text-lg font-semibold">Tissue Box · 纸巾盒</h3>
+      <p class="text-sm muted mt-2">
+        图腾纹理与复古金属扣，实用与装饰兼具，适合客厅、卧室与办公室。
+      </p>
+      <p class="text-sm muted mt-3">
+        家庭常青款 · 可组合购买
+      </p>
     </div>
-  </section>
 
-  <!-- Contact / Order -->
-  <section id="contact" class="mx-auto max-w-6xl px-4 py-12">
-    <div class="glass rounded-3xl p-7 shadow-soft">
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <h2 class="text-2xl font-semibold" data-i18n="ctTitle">联系 / 下单</h2>
-          <p class="mt-2 muted leading-relaxed" data-i18n="ctDesc">
-            发送你想要的系列 + 数量 + 是否自取/包邮 + 你所在城市（或邮编前三位），我会回复库存、价格与发货时间。
-          </p>
-
-          <div class="mt-5 space-y-3 text-sm">
-            <div class="glass rounded-2xl p-4">
-              <div class="muted" data-i18n="ct1">推荐渠道：</div>
-              <div class="mt-1">Instagram / Facebook / WeChat / TikTok / 小红书 / Kijiji</div>
-            </div>
-            <div class="glass rounded-2xl p-4">
-              <div class="muted" data-i18n="ct2">付款方式：</div>
-              <div class="mt-1" data-i18n="ct2b">e-transfer（邮寄/自取），线下可现金；暂不提供 PayPal。</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="glass rounded-3xl p-6 border hairline">
-          <div class="text-sm muted" data-i18n="orderTplTitle">下单模板（复制粘贴）</div>
-          <textarea id="orderTpl" class="mt-3 w-full h-56 rounded-2xl bg-black/40 border hairline p-4 text-sm focus:outline-none focus:ring-2 focus:ring-white/20"
-            spellcheck="false"></textarea>
-
-          <div class="mt-4 flex flex-col sm:flex-row gap-3">
-            <button id="copyBtn" class="rounded-2xl px-5 py-3 bg-white text-black font-medium hover:opacity-90">
-              <span data-i18n="copyBtn">一键复制模板</span>
-            </button>
-            <a class="btn rounded-2xl px-5 py-3 glass text-center" href="#featured">
-              <span data-i18n="backToProd">回到主推</span>
-            </a>
-          </div>
-
-          <div id="copyToast" class="mt-3 text-xs muted hidden" data-i18n="copied">已复制。直接粘贴到你常用的聊天平台即可。</div>
-        </div>
-      </div>
-
-      <footer class="mt-8 pt-6 border-t hairline flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs muted">
-        <div>© <span id="year"></span> H&H <span data-i18n="footer1">Minimal, Neutral, Premium.</span></div>
-        <div data-i18n="footer2">内容发布：环绕预览视频 / 功能测试 / 上新预告 / 热卖款推进</div>
-      </footer>
+    <!-- Clock -->
+    <div class="glass rounded-3xl p-5 shadow-soft">
+      <img src="images/clock.jpg" alt="Table Clock 桌面钟"
+        class="w-full h-56 object-cover rounded-2xl mb-4" />
+      <h3 class="text-lg font-semibold">Table Clock · 桌面钟</h3>
+      <p class="text-sm muted mt-2">
+        镂空齿轮设计，复古工业风，适合书桌、床头与装饰摆设。
+      </p>
+      <p class="text-sm muted mt-3">
+        高装饰性 · 拍摄友好
+      </p>
     </div>
-  </section>
 
-  <script>
-    const products = [
-      {
-        key: "trunksSet",
-        nameZH: "Trunks · 3件套宝藏箱（大/中/小）",
-        nameEN: "Trunks · 3-piece Chest Set (L/M/S)",
-        descZH: "复古欧式质感，适合礼物、收藏与纪念品收纳。",
-        descEN: "Vintage premium look. Perfect for gifting, memories, and storage.",
-        shipPrice: "$99 (包邮价)",
-        pickupOff: "自取立减 $8",
-        tagsZH: ["礼物首选","摄影道具","稳定利润"],
-        tagsEN: ["Gift-ready","Photo prop","Stable margin"],
-      },
-      {
-        key: "miniBox",
-        nameZH: "Mini Box · 小物收纳",
-        nameEN: "Mini Box · Small Essentials",
-        descZH: "戒指/耳钉/U盘/硬币等，桌面美学必备。",
-        descEN: "For rings, earbuds, USBs, coins — desk-aesthetic essential.",
-        shipPrice: "$14.99 (包邮价)",
-        pickupOff: "自取立减 $3",
-        tagsZH: ["走量复购","捆绑强","冲动购买"],
-        tagsEN: ["High-repeat","Bundle-friendly","Impulse buy"],
-      },
-      {
-        key: "tissueBox",
-        nameZH: "Tissue Box · 纸巾盒",
-        nameEN: "Tissue Box · Home Essential",
-        descZH: "木纹/皮革/金属风，装饰性更强的常青款。",
-        descEN: "Wood/PU/metal style — evergreen, decorative essential.",
-        shipPrice: "$26.99 (包邮价)",
-        pickupOff: "自取立减 $5",
-        tagsZH: ["家庭办公","常青款","可套装"],
-        tagsEN: ["Home/Office","Evergreen","Bundle-ready"],
-      }
-    ];
+  </div>
+</section>
 
-    let lang = "zh";
+<!-- Order -->
+<section id="order" class="max-w-6xl mx-auto px-4 py-16">
+  <div class="glass rounded-3xl p-8 shadow-soft">
+    <h2 class="text-2xl font-semibold mb-4">联系 / 下单</h2>
+    <p class="muted mb-6">
+      通过 Facebook 或 Instagram 联系我，发送你想要的产品 + 数量 + 是否自取。
+    </p>
 
-    const i18n = {
-      zh: {
-        brandSub: "极简 · 高质感 · 中性风收纳",
-        navCollections: "系列",
-        navFeatured: "主推",
-        navShipping: "配送/自取",
-        navPolicy: "政策",
-        navContact: "联系/下单",
-        ctaTop: "立即下单",
-        tagMinimal: "纯色极简",
-        tagNeutral: "中性审美",
-        tagQuality: "高质感材料",
-        tagPractical: "高实用性",
-        heroTitle1: "把生活的杂乱",
-        heroTitle2: "收进一个高级感里",
-        heroDesc: "为男女各年龄层、家庭用户、学生与白领提供桌面与家居收纳解决方案。木纹、亚克力、仿古金属等高级材质，适配任何房间风格。",
-        heroBtn1: "查看热卖主推",
-        heroBtn2: "包邮 / 自取怎么选",
-        stat1: "系列分类",
-        stat2Top: "礼物级",
-        stat2: "质感包装",
-        stat3Top: "CA",
-        stat3: "加拿大本地",
-        heroRightTitle: "本周主打",
-        heroRightName: "Trunks · 3件套宝藏箱",
-        heroRightDesc: "复古欧式 / 仿古金属扣 / 书卷纹质感。适合装饰、摄影道具、纪念品与首饰收纳。礼物场景强，利润稳定。",
-        badge1: "默认",
-        badge1b: "邮寄 · 包邮价",
-        badge1c: "适合全加拿大范围",
-        badge2: "本地福利",
-        badge2b: "自取 · 立减",
-        badge2c: "不想付运费就自取",
-        heroRightBtn: "咨询库存 / 直接下单",
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="#" class="rounded-2xl px-6 py-3 bg-black text-white text-center">
+        Facebook 下单
+      </a>
+      <a href="#" class="rounded-2xl px-6 py-3 bg-white border border-[var(--line)] text-center">
+        Instagram 下单
+      </a>
+    </div>
 
-        colTitle: "系列分类",
-        colDesc: "每个系列都兼顾实用与审美，适配桌面与家居场景。",
-        colLink: "想看实拍？联系我 →",
+    <div class="mt-6 text-sm muted">
+      支付方式：e-transfer ｜ 线下自取支持现金或当场 e-transfer
+    </div>
+  </div>
+</section>
 
-        c1Tag:"礼物 / 复古 / 收藏",
-        c1Title:"Trunks · 宝藏箱",
-        c1Desc:"大中小三尺寸，适合照片、信件、纪念品、首饰。复古金属扣与仿古皮革质感，男女皆宜。",
-        c1p1:"摄影道具", c1p2:"礼物场景强", c1p3:"利润稳定",
+<!-- Footer -->
+<footer class="max-w-6xl mx-auto px-4 py-10 text-sm muted">
+  © <span id="year"></span> HomeAndHeritage · Minimal · Timeless · Practical
+</footer>
 
-        c2Tag:"走量 / 桌面美学 / 复购",
-        c2Title:"Mini Box · 小物收纳",
-        c2Desc:"戒指、耳钉、U盘、硬币、印章等“小到会丢的东西”，随处可放。最适合捆绑销售与赠品策略。",
-        c2p1:"冲动购买", c2p2:"买2包邮", c2p3:"复购强",
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-        c3Tag:"家庭 / 办公 / 常青款",
-        c3Title:"Tissue Box · 纸巾盒",
-        c3Desc:"人人用得到，更有装饰性（木纹 / PU皮 / 金属风格）。客厅、卧室、浴室、办公室都适配。",
-        c3p1:"生活提升", c3p2:"稳定好卖", c3p3:"可做套装",
-
-        c4Tag:"拍照爆款 / 装饰 + 实用",
-        c4Title:"Suitcase / Book Box · 摆件收纳",
-        c4Desc:"房间布置、桌面装饰强，能拍照也能收纳。适合文件、手账本、小设备与收藏小物。",
-        c4p1:"小红书友好", c4p2:"中性风", c4p3:"礼物选择",
-
-        featTitle:"主推热卖（可直接下单）",
-        featDesc:"默认显示“包邮价”。本地自取可立减（不把邮费写出来，让它像福利）。",
-        featNote:"价格为示例占位：你把数字改成你的最终定价即可。",
-
-        deal1t:"套装策略", deal1b:"买2自动包邮", deal1c:"让邮费“消失”，提高转化率。",
-        deal2t:"赠品策略", deal2b:"满额送小礼", deal2c:"贴纸 + 感谢卡 + 小赠品，提升复购。",
-        deal3t:"双价呈现", deal3b:"包邮价 / 自取立减", deal3c:"自取是福利，不是“你在收邮费”。",
-
-        shipTitle:"配送与自取",
-        shipDesc:"主打线上邮寄（默认包邮价），少量线下自取（自取立减）。买家愿意付邮寄费时，就让“包邮”成为理由；不愿意时，用自取立减或买多包邮策略解决。",
-        ship1t:"默认：包邮价", ship1c:"覆盖大多数地区；结账更干净，减少放弃下单。",
-        ship2t:"本地：自取立减", ship2c:"同城可约时间地点；现金或当场 e-transfer。",
-        ship3t:"可选：Tracking", ship3c:"需要追踪号可加价升级，降低丢包纠纷。",
-
-        packTitle:"包装（让你能卖贵的原因）",
-        packDesc:"Zip bag + bubble mailer + 感谢卡 + DIY贴纸。看起来“很用心”，满意度更高，退货更低，复购更强。",
-        pack1t:"感谢语", pack1c:"提升品牌温度与复购。",
-        pack2t:"贴纸", pack2c:"让用户愿意拍照发社媒。",
-        pack3t:"防护", pack3c:"减少破损与纠纷。",
-        pack4t:"开箱体验", pack4c:"让“亲民价”也像精品。",
-
-        polTitle:"退换 / 风险说明",
-        polDesc:"规则清晰但话术要高级：我们把它写得更品牌化、不生硬。",
-        pol1t:"退换政策",
-        pol1c:"非质量问题不退换（如个人喜好、尺寸不合适）。如到货破损或明显瑕疵，请在24小时内提供开箱视频/照片，我们将协助处理。",
-        pol2t:"运输风险",
-        pol2c:"普通邮寄存在丢包风险。需要更高保障可选择 Tracking 服务（可加价升级），以降低纠纷与不确定性。",
-        pol3t:"线下交易",
-        pol3c:"线下仅支持现金或当场 e-transfer 完成后交付，避免赖账与争议。",
-
-        faqTitle:"常见问题",
-        q1:"Q：为什么默认是包邮价？", a1:"A：结账更简单、少一步犹豫。你也可以选择本地自取立减。",
-        q2:"Q：可以看更多实拍/视频吗？", a2:"A：可以，发消息告诉我你想看的系列，我会发细节图和环绕预览视频。",
-        q3:"Q：有哪些适合送礼的？", a3:"A：Trunks / Suitcase / Book Box 最适合，质感强、拍照好看、用途广。",
-        q4:"Q：Mini Box 为什么适合捆绑？", a4:"A：使用频率高、客单低、冲动购买强；搭配大件做赠品能显得很划算。",
-
-        ctTitle:"联系 / 下单",
-        ctDesc:"发送你想要的系列 + 数量 + 是否自取/包邮 + 你所在城市（或邮编前三位），我会回复库存、价格与发货时间。",
-        ct1:"推荐渠道：",
-        ct2:"付款方式：",
-        ct2b:"e-transfer（邮寄/自取），线下可现金；暂不提供 PayPal。",
-        orderTplTitle:"下单模板（复制粘贴）",
-        copyBtn:"一键复制模板",
-        backToProd:"回到主推",
-        copied:"已复制。直接粘贴到你常用的聊天平台即可。",
-        footer1:"Minimal, Neutral, Premium.",
-        footer2:"内容发布：环绕预览视频 / 功能测试 / 上新预告 / 热卖款推进",
-      },
-      en: {
-        brandSub: "Minimal · Neutral · Premium Storage",
-        navCollections: "Collections",
-        navFeatured: "Featured",
-        navShipping: "Shipping / Pickup",
-        navPolicy: "Policy",
-        navContact: "Order",
-        ctaTop: "Order Now",
-        tagMinimal: "Solid Minimal",
-        tagNeutral: "Gender-neutral",
-        tagQuality: "Premium Materials",
-        tagPractical: "Practical",
-        heroTitle1: "Turn clutter",
-        heroTitle2: "into calm, premium order",
-        heroDesc: "Storage solutions for all ages — home, students, and professionals. Wood grain, acrylic, and vintage metal finishes that fit any space.",
-        heroBtn1: "See Featured",
-        heroBtn2: "Ship vs Pickup",
-        stat1: "Collections",
-        stat2Top: "Gift-grade",
-        stat2: "Unboxing",
-        stat3Top: "CA",
-        stat3: "Canada-based",
-        heroRightTitle: "This Week",
-        heroRightName: "Trunks · 3-piece Set",
-        heroRightDesc: "Vintage look with premium texture. Great for decor, photo props, and storing memories & jewelry.",
-        badge1: "Default",
-        badge1b: "Shipped · Free-shipping price",
-        badge1c: "Best for Canada-wide",
-        badge2: "Local perk",
-        badge2b: "Pickup · Save",
-        badge2c: "Pick up to save",
-        heroRightBtn: "Check stock / Order",
-
-        colTitle: "Collections",
-        colDesc: "Each line balances aesthetics and practicality for desk + home.",
-        colLink: "Want real photos? Message me →",
-
-        c1Tag:"Gift / Vintage / Collect",
-        c1Title:"Trunks · Treasure Chests",
-        c1Desc:"3 sizes for photos, letters, jewelry, and keepsakes. Vintage latch & leather-like texture — unisex.",
-        c1p1:"Photo prop", c1p2:"Gift-friendly", c1p3:"Stable margin",
-
-        c2Tag:"Volume / Desk Aesthetic / Repeat",
-        c2Title:"Mini Box · Essentials",
-        c2Desc:"For rings, studs, USBs, coins — small things that get lost. Best for bundling & freebies.",
-        c2p1:"Impulse", c2p2:"Buy-2 ships free", c2p3:"Repeat buy",
-
-        c3Tag:"Home / Office / Evergreen",
-        c3Title:"Tissue Box",
-        c3Desc:"Decorative wood/PU/metal styles. Works in living room, bedroom, bathroom, office.",
-        c3p1:"Lifestyle upgrade", c3p2:"Evergreen", c3p3:"Bundle-ready",
-
-        c4Tag:"Social-friendly / Decor + Use",
-        c4Title:"Suitcase / Book Box",
-        c4Desc:"Great for room styling and storage. Fits notebooks, devices, and collectibles.",
-        c4p1:"XHS/TikTok-ready", c4p2:"Neutral style", c4p3:"Gift option",
-
-        featTitle:"Featured (Order Directly)",
-        featDesc:"Default shows free-shipping price. Local pickup gets a discount (presented as a perk).",
-        featNote:"Prices are placeholders — replace with your final pricing.",
-
-        deal1t:"Bundles", deal1b:"Buy 2 → ships free", deal1c:"Shipping ‘disappears’, conversion rises.",
-        deal2t:"Freebies", deal2b:"Gift with purchase", deal2c:"Sticker + thank-you + small gift boosts repeat.",
-        deal3t:"Two-price display", deal3b:"Ship price / Pickup save", deal3c:"Pickup is a perk, not a fee.",
-
-        shipTitle:"Shipping & Pickup",
-        shipDesc:"Online shipping first (default free-shipping price), limited local pickup (pickup discount). If buyers dislike shipping, use pickup savings or multi-buy free shipping.",
-        ship1t:"Default: Free-shipping price", ship1c:"Cleaner checkout, fewer drop-offs.",
-        ship2t:"Local: Pickup savings", ship2c:"Schedule a time/place; cash or on-the-spot e-transfer.",
-        ship3t:"Optional: Tracking", ship3c:"Upgrade to tracking to reduce disputes.",
-
-        packTitle:"Packaging (why you can price higher)",
-        packDesc:"Zip bag + bubble mailer + thank-you card + DIY stickers. Higher satisfaction, fewer returns, more repeat buys.",
-        pack1t:"Thank-you note", pack1c:"Warmer brand, higher repeat.",
-        pack2t:"Stickers", pack2c:"Encourages social posts.",
-        pack3t:"Protection", pack3c:"Less damage, fewer disputes.",
-        pack4t:"Unboxing", pack4c:"Affordable yet premium.",
-
-        polTitle:"Returns / Risk Notes",
-        polDesc:"Clear rules, premium wording — firm but not harsh.",
-        pol1t:"Returns",
-        pol1c:"No returns for non-quality reasons (preference/size). If damaged/defective, send unboxing photo/video within 24h and we’ll help.",
-        pol2t:"Shipping risk",
-        pol2c:"Untracked shipping may have loss risk. Tracking upgrade available to reduce uncertainty.",
-        pol3t:"Local deals",
-        pol3c:"Local pickup: cash or instant e-transfer upon handoff to avoid disputes.",
-
-        faqTitle:"FAQ",
-        q1:"Q: Why show free-shipping price by default?", a1:"A: Cleaner checkout and fewer hesitations. Local pickup gets a discount.",
-        q2:"Q: Can I see more photos/videos?", a2:"A: Yes — tell me the collection and I’ll send detail shots + 360 videos.",
-        q3:"Q: Best gift options?", a3:"A: Trunks / Suitcase / Book Box — premium look and versatile use.",
-        q4:"Q: Why is Mini Box great for bundles?", a4:"A: Low price, high use, strong impulse — perfect as add-on/freebie.",
-
-        ctTitle:"Contact / Order",
-        ctDesc:"Send: collection + quantity + ship/pickup + your city (or first 3 of postal code). I’ll confirm stock, price, and ship time.",
-        ct1:"Best channels:",
-        ct2:"Payment:",
-        ct2b:"e-transfer (ship/pickup), cash for local; PayPal not available.",
-        orderTplTitle:"Order template (copy)",
-        copyBtn:"Copy template",
-        backToProd:"Back to featured",
-        copied:"Copied. Paste it into your preferred chat app.",
-        footer1:"Minimal, Neutral, Premium.",
-        footer2:"Content: 360 preview / function tests / new drops / best-sellers",
-      }
-    };
-
-    function renderProducts() {
-      const grid = document.getElementById("productGrid");
-      grid.innerHTML = "";
-      products.forEach(p => {
-        const name = (lang === "zh") ? p.nameZH : p.nameEN;
-        const desc = (lang === "zh") ? p.descZH : p.descEN;
-        const tags = (lang === "zh") ? p.tagsZH : p.tagsEN;
-
-        const card = document.createElement("div");
-        card.className = "glass rounded-3xl p-6 shadow-soft flex flex-col";
-        card.innerHTML = `
-        <img 
-    src="images/${p.key}.jpg"
-    alt="${name}"
-    class="w-full h-40 object-cover rounded-2xl mb-3"
-  />
-          <div class="text-xs muted">${(lang==="zh") ? "默认显示包邮价" : "Default: free-shipping price"}</div>
-          <div class="mt-2 text-lg font-semibold">${name}</div>
-          <p class="mt-2 text-sm muted leading-relaxed">${desc}</p>
-          <div class="mt-4 flex items-end justify-between gap-3">
-            <div>
-              <div class="text-xl font-semibold">${p.shipPrice}</div>
-              <div class="text-xs muted">${p.pickupOff}</div>
-            </div>
-            <a href="#contact" class="rounded-2xl px-4 py-2 bg-white text-black text-sm font-medium hover:opacity-90">
-              ${(lang==="zh") ? "下单" : "Order"}
-            </a>
-          </div>
-          <div class="mt-4 flex flex-wrap gap-2">
-            ${tags.map(t => `<span class="tag rounded-full px-3 py-1 text-xs muted">${t}</span>`).join("")}
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    function applyI18n() {
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (i18n[lang][key]) el.textContent = i18n[lang][key];
-      });
-      renderProducts();
-      const tpl = (lang==="zh")
-        ? `【BOXMAN 下单信息】\n1) 系列：Trunks / Mini Box / Tissue Box / Suitcase / Book Box\n2) 数量：\n3) 方式：邮寄（包邮价）/ 本地自取（立减）\n4) 城市/邮编前三位：\n5) 需要 Tracking 吗：是/否\n6) 备注（颜色/材质偏好）：`
-        : `[BOXMAN ORDER]\n1) Collection: Trunks / Mini Box / Tissue Box / Suitcase / Book Box\n2) Quantity:\n3) Method: Shipped (free-shipping price) / Local pickup (save)\n4) City / first 3 of postal code:\n5) Tracking upgrade: Yes/No\n6) Notes (color/material preference):`;
-      document.getElementById("orderTpl").value = tpl;
-    }
-
-    document.getElementById("langBtn").addEventListener("click", () => {
-      lang = (lang === "zh") ? "en" : "zh";
-      applyI18n();
-    });
-
-    document.getElementById("copyBtn").addEventListener("click", async () => {
-      const txt = document.getElementById("orderTpl").value;
-      try{
-        await navigator.clipboard.writeText(txt);
-        document.getElementById("copyToast").classList.remove("hidden");
-        setTimeout(()=>document.getElementById("copyToast").classList.add("hidden"), 1800);
-      }catch(e){
-        alert("复制失败：请手动全选复制。");
-      }
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // init
-    applyI18n();
-  </script>
 </body>
 </html>
+
